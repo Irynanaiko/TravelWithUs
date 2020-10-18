@@ -1,0 +1,37 @@
+@mixin btn {
+    width: 225px;
+    height: 60px;
+    border: none;
+    background-color: $accentColor;
+    background: linear-gradient(50deg, #496bfe 40%, #5474fd 40%);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Aleo";
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 20px -2px #e9e9e9;
+    }
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+@mixin grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 960px;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+
+@mixin mQ ($arg) {
+    @media screen and (max-width: $arg) {
+        @content;
+    }
+}

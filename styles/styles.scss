@@ -1,0 +1,847 @@
+@import '../fonts/style.css';
+@import './_base';
+@import './_variables';
+@import './_mixins';
+
+%background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    height: 500px;
+    background-image: url(../img/header-background.png);
+    @extend %background;
+
+    @include mQ(920px) {
+        height: 380px;
+    }
+
+    .header-text {
+        @include grid;
+
+        &__caption {
+            grid-column: 5/10;
+            grid-row: 12;
+
+            font-family: "Josefin Sans";
+            font-size: 48px;
+            letter-spacing: 5px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include mQ(580px) {
+                grid-column: 1/13;
+                grid-row: 10;
+                font-size: 38px;
+            }
+        }
+
+        &__slogan {
+            grid-column: 5/10;
+            grid-row: 13;
+
+            font-family: "Josefin Sans";
+            font-size: 22px;
+            letter-spacing: 7px;
+            text-align: center;
+
+            @include mQ(920px) {
+                font-size: 18px;
+            }
+
+            @include mQ(580px) {
+                grid-column: 3/11;
+                grid-row: 11;
+                font-size: 16px;
+            }
+
+            @include mQ(320px) {
+                grid-column: 1/13;
+                font-size: 14px;
+                letter-spacing: 5px;
+            }
+        }
+    }
+
+    .search-wrapper {
+        @include grid;
+
+        grid-column: 3/12;
+        grid-row: 15;
+        gap: 0;
+
+        width: 500px;
+        height: 60px;
+        margin: 20px auto 50px auto;
+        background-color: #fff;
+
+        input {
+            width: 500px;
+            height: 60px;
+            padding: 10px 5px;
+            float: left;
+            background-color: #fff;
+            font-family: "Josefin Sans";
+            font-size: 14px;
+            letter-spacing: 3px;
+            border: 0;
+            color: #999999;
+            border-top-style: none;
+            text-align: center;
+
+            &:focus {
+                outline: 0;
+                background: #fff;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+            }
+
+            &::-webkit-input-placeholder {
+                color: #999;
+                font-weight: normal;
+                padding-left: 20px;
+            }
+
+            &:-moz-placeholder {
+                color: #999;
+                font-weight: normal;
+            }
+
+            &:-ms-input-placeholder {
+                color: #999;
+                font-weight: normal;
+                border-style: none;
+            }
+
+            @include mQ(920px) {
+                width: 350px;
+                height: 50px;
+            }
+
+            @include mQ(320px) {
+                width: 220px;
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+        }
+
+        @include mQ(520px) {
+            width: 350px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        @include mQ(320px) {
+            width: 220px;
+        }
+
+        button {
+            overflow: visible;
+            position: relative;
+            float: right;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            height: 60px;
+            width: 150px;
+            border: 2px solid #fff;
+            font-family: 'Aleo', serif;
+            color: #fff;
+            text-transform: uppercase;
+            background: $accentColor;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 400;
+            text-align: center;
+
+            &:hover {
+                background: darken($accentColor, 8);
+            }
+
+            &:active,
+            &:focus {
+                background: darken($accentColor, 12);
+                outline: 0;
+            }
+
+            &::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+            }
+
+            span {
+                font-size: large;
+                padding-left: 15px;
+            }
+
+            @include mQ(520px) {
+                width: 350px;
+                border: none;
+            }
+
+            @include mQ(320px) {
+                width: 220px;
+            }
+        }
+
+        @include mQ(520px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .scroll {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-family: "Josefin Sans";
+            text-align: center;
+        }
+
+        span {
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+
+            font-size: 22px;
+            cursor: pointer;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    padding: 20px 0;
+    background-color: $accentColor;
+
+    .nav-section {
+        @include grid;
+
+        &__caption {
+            grid-column: 1/3;
+            align-self: center;
+
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-family: "Josefin Sans";
+            text-transform: uppercase;
+
+            @include mQ(800px) {
+                grid-column: 6/9;
+            }
+
+            @include mQ(580px) {
+                grid-column: 1/5;
+                font-size: 20px;
+            }
+        }
+
+        span {
+            font-size: 38px;
+            margin-left: 10px;
+            display: none;
+
+            @include mQ(580px) {
+                display: grid;
+                grid-column: 10/13;
+            }
+        }
+
+        &__list {
+            grid-column: 6/13;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            @include mQ(800px) {
+                grid-column: 1/13;
+                grid-row: 2;
+            }
+
+            @include mQ(580px) {
+                display: none;
+            }
+        }
+
+        &__link {
+            transition: 0.4s;
+            padding: 0 10px;
+            font-size: 14px;
+            text-decoration: none;
+            color: $mainColor;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: #ffffff;
+                color: $accentColor;
+                padding: 24px 10px;
+            }
+
+            @include mQ(920px) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.choose {
+    min-height: 550px;
+    background-image: url(../img/choose-background.png);
+
+    @extend %background;
+
+    .choose-section {
+
+        @include grid;
+
+        @include mQ(800px) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .choose-text {
+            display: flex;
+            flex-direction: column;
+            width: 520px;
+            padding-top: 60px;
+
+            @include mQ(800px) {
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+
+            @include mQ(520px) {
+                width: 380px;
+            }
+
+            @include mQ(320px) {
+                width: 260px;
+            }
+
+            &__title {
+                font-size: 36px;
+                font-weight: 400;
+
+                @include mQ(580px) {
+                    font-size: 32px;
+                }
+
+                @include mQ(420px) {
+                    font-size: 22px;
+                }
+
+                @include mQ(520px) {
+                    font-size: 18px;
+                }
+            }
+
+            &__subtitle {
+                padding: 20px 0;
+                font-size: 16px;
+                letter-spacing: 2px;
+                font-family: "Josefin Sans";
+
+                @include mQ(580px) {
+                    font-size: 14px;
+                    margin: auto 10px;
+                }
+            }
+
+            &__button {
+                @include btn;
+
+                @include mQ(800px) {
+                    width: 180px;
+                    height: 50px;
+                    font-size: 14px;
+                }
+
+                @include mQ(320px) {
+                    width: 160px;
+                    height: 40px;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .img1 {
+            padding-top: 40px;
+            align-items: flex-start;
+
+            img {
+                @include mQ(320px) {
+                    max-width: 320px;
+                }
+            }
+        }
+
+        .img2 {
+            padding-left: 60px;
+
+            @include mQ(920px) {
+                padding-left: 0;
+            }
+
+            @include mQ(720px) {
+                align-self: flex-end;
+            }
+
+            @include mQ(520px) {
+                align-self: center;
+            }
+
+            img {
+                @include mQ(320px) {
+                    max-width: 320px;
+                }
+            }
+        }
+
+        .choose-section__img {
+            @include mQ(800px) {
+                display: flex;
+                gap: 10px;
+                padding: 0 30px;
+            }
+
+            @include mQ(720px) {
+                flex-direction: column;
+            }
+
+            @include mQ(520px) {
+                margin-bottom: 30px;
+            }
+
+            @include mQ(320px) {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.how-it-works {
+    max-height: 337px;
+    background-color: #333333;
+
+    .choose-icons {
+        @include grid;
+
+        text-align: center;
+        padding: 60px 0;
+
+        &__seach {
+            grid-column: 1/5;
+            grid-row: 2;
+        }
+
+        &__select {
+            grid-column: 6/9;
+            grid-row: 2;
+        }
+
+        &__book {
+            grid-column: 10/13;
+            grid-row: 2;
+
+            @include mQ(420px) {
+                grid-column: 9/13;
+            }
+        }
+
+        p,
+        span {
+            font-size: 36px;
+
+            @include mQ(920px) {
+                font-size: 32px;
+            }
+
+            @include mQ(800px) {
+                font-size: 28px;
+            }
+        }
+
+        p {
+            @include mQ(580px) {
+                font-size: 18px;
+            }
+
+            @include mQ(420px) {
+                font-size: 14px;
+            }
+        }
+
+        .icon-search {
+            color: #5474fd;
+        }
+
+        .icon-check {
+            color: #ff6363;
+        }
+
+        .icon-like2 {
+            color: #00a2ff;
+        }
+
+        .cont {
+            margin-bottom: -50px;
+            width: 340px;
+            height: 98px;
+            border-radius: 48%;
+            border-top: 1px dotted #fff;
+
+            @include mQ(920px) {
+                width: 300px;
+                height: 90px;
+            }
+
+            @include mQ(800px) {
+                display: none;
+            }
+        }
+
+        .cont-1 {
+            grid-column: 3/8;
+        }
+
+        .cont-2 {
+            margin-left: -40px;
+            grid-column: 8/13;
+        }
+
+        @include mQ(520px) {
+            padding: 30px 0;
+        }
+
+        @include mQ(320px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.booking1 {
+    @extend %background;
+
+    height: 550px;
+
+    background-image: url(../img/book-background.png);
+
+    @include mQ(520px) {
+        height: 450px;
+    }
+
+    .booking1-section {
+
+        @include grid;
+    }
+}
+
+.booking-text {
+    grid-column: 1/7;
+    grid-row: 7;
+    padding: 20px;
+    background-color: #232323;
+    opacity: 0.9;
+
+    @include mQ(580px) {
+        width: 440px;
+    }
+
+    @include mQ(520px) {
+        grid-column: 2/9;
+        width: 400px;
+        text-align: center;
+    }
+
+    @include mQ(420px) {
+        grid-column: 1/13;
+        width: 380px;
+    }
+
+    @include mQ(320px) {
+        width: 280px;
+    }
+
+    &__heading {
+        padding-bottom: 20px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-family: "Josefin Sans";
+        color: #e8e8e8;
+
+        @include mQ(520px) {
+            font-size: 18px;
+        }
+    }
+
+    &__title {
+        padding-bottom: 20px;
+        font-size: 20px;
+        color: #fefefe;
+        font-family: "Josefin Sans";
+
+        @include mQ(420px) {
+            font-size: 18px;
+        }
+    }
+
+    &__subtitle {
+        padding-bottom: 20px;
+        font-size: 16px;
+        color: #e8e8e8;
+        font-family: "Josefin Sans";
+
+        @include mQ(420px) {
+            font-size: 14px;
+        }
+    }
+
+    &__button {
+        @include btn;
+
+        @include mQ(800px) {
+            width: 180px;
+            height: 50px;
+            font-size: 14px;
+        }
+
+        @include mQ(320px) {
+            width: 160px;
+            height: 40px;
+            font-size: 12px;
+        }
+    }
+}
+
+.booking2 {
+    @extend %background;
+
+    height: 550px;
+
+    background-image: url(../img/book2-background.png);
+
+    @include mQ(580px) {
+        height: 450px;
+    }
+
+    .booking2-section {
+
+        @include grid;
+
+        .text-left {
+            grid-column: 7/13;
+
+            @include mQ(580px) {
+                grid-column: 3/13;
+            }
+
+            @include mQ(520px) {
+                grid-column: 2/9;
+            }
+
+            @include mQ(420px) {
+                grid-column: 1/13;
+                width: 380px;
+            }
+
+            @include mQ(320px) {
+                width: 280px;
+            }
+        }
+    }
+}
+
+.feedback {
+    @extend %background;
+
+    height: 550px;
+    background-image: url(../img/feedback-background.png);
+
+    @include mQ(800px) {
+        height: 670px;
+    }
+
+    @include mQ(580px) {
+        height: 720px;
+    }
+
+    @include mQ(320px) {
+        height: 600px;
+    }
+
+    h4 {
+        padding: 60px 0;
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+
+        @include mQ(580px) {
+            font-size: 32px;
+        }
+
+        @include mQ(420px) {
+            font-size: 28px;
+            padding: 30px 0;
+        }
+
+        @include mQ(320px) {
+            font-size: 24px;
+        }
+    }
+
+    .feedback-wrapper {
+
+        @include grid;
+
+        @include mQ(800px) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__text {
+            grid-column: 3/13;
+            font-size: 20px;
+            color: #fefefe;
+            font-family: "Josefin Sans";
+
+            h3 {
+                padding-bottom: 30px;
+
+                @include mQ(580px) {
+                    padding-bottom: 10px;
+                }
+            }
+
+            span {
+                transform: skewX(180deg);
+                font-size: 36px;
+                color: #5474fd;
+            }
+
+            @include mQ(580px) {
+                margin: auto 10px;
+            }
+
+            p {
+                @include mQ(420px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__img {
+
+            @include mQ(800px) {
+                margin: 0 auto;
+            }
+
+            img {
+                @include mQ(320px) {
+                    max-width: 200px;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+}
+
+.footer {
+    @extend %background;
+
+    height: 200px;
+    background-color: #232323;
+
+    .footer-section {
+
+        @include grid;
+        padding-top: 40px;
+
+        &__title {
+            grid-column: 6/8;
+            grid-row: 2;
+
+            font-size: 24px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            font-family: "Josefin Sans";
+            text-transform: uppercase;
+
+            @include mQ(580px) {
+                grid-column: 5/10;
+            }
+
+            @include mQ(420px) {
+                grid-column: 4/10;
+            }
+
+            @include mQ(320px) {
+                grid-column: 3/13;
+            }
+        }
+
+        &__subtitle {
+            grid-column: 6/9;
+            grid-row: 3;
+            font-size: 16px;
+            letter-spacing: 2px;
+            line-height: 26px;
+            color: #ffffff;
+            font-family: "Josefin Sans";
+
+            @include mQ(800px) {
+                grid-column: 6/10;
+                font-size: 14px;
+            }
+
+            @include mQ(580px) {
+                grid-column: 5/10;
+            }
+
+            @include mQ(420px) {
+                grid-column: 4/13;
+            }
+
+            @include mQ(320px) {
+                grid-column: 3/13;
+            }
+        }
+
+        &__icons {
+            grid-column: 6/9;
+            grid-row: 4;
+
+            @include mQ(580px) {
+                grid-column: 5/10;
+            }
+
+            @include mQ(420px) {
+                grid-column: 4/13;
+            }
+
+            @include mQ(320px) {
+                grid-column: 3/13;
+            }
+        }
+
+        span {
+            padding-left: 15px;
+
+            &:hover {
+                color: $accentColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
