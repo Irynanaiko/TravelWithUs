@@ -24,6 +24,9 @@
         &__caption {
             grid-column: 5/10;
             grid-row: 12;
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 5;
+            -ms-grid-row: 12;
 
             font-family: "Josefin Sans";
             font-size: 48px;
@@ -42,6 +45,9 @@
         &__slogan {
             grid-column: 5/10;
             grid-row: 13;
+            -ms-grid-column: 5;
+            -ms-grid-column-span: 5;
+            -ms-grid-row: 13;
 
             font-family: "Josefin Sans";
             font-size: 22px;

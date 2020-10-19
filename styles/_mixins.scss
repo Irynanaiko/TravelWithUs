@@ -28,6 +28,8 @@
     max-width: 960px;
     margin: 0 auto;
     grid-gap: 10px;
+    display: grid;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 
 @mixin mQ ($arg) {

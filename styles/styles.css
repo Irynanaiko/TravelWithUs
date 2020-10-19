@@ -45,7 +45,7 @@ li {
 }
 
 * {
-  transition: all 0.1s easy-in;
+  transition: all 0.1s;
 }
 
 .footer, .feedback, .booking2, .booking1, .choose, .header {
@@ -69,10 +69,15 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 .header .header-text__caption {
   grid-column: 5/10;
   grid-row: 12;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 5;
+  -ms-grid-row: 12;
   font-family: "Josefin Sans";
   font-size: 48px;
   letter-spacing: 5px;
@@ -90,6 +95,9 @@ li {
 .header .header-text__slogan {
   grid-column: 5/10;
   grid-row: 13;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 5;
+  -ms-grid-row: 13;
   font-family: "Josefin Sans";
   font-size: 22px;
   letter-spacing: 7px;
@@ -120,6 +128,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
   grid-column: 3/12;
   grid-row: 15;
   gap: 0;
@@ -267,6 +277,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 .nav .nav-section__caption {
   grid-column: 1/3;
@@ -346,6 +358,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 @media screen and (max-width: 800px) {
   .choose .choose-section {
@@ -507,6 +521,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
   text-align: center;
   padding: 60px 0;
 }
@@ -614,6 +630,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 
 .booking-text {
@@ -731,6 +749,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 .booking2 .booking2-section .text-left {
   grid-column: 7/13;
@@ -804,6 +824,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
 }
 @media screen and (max-width: 800px) {
   .feedback .feedback-wrapper {
@@ -862,6 +884,8 @@ li {
   max-width: 960px;
   margin: 0 auto;
   grid-gap: 10px;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
   padding-top: 40px;
 }
 .footer .footer-section__title {
