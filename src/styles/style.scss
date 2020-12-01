@@ -11,7 +11,7 @@
 
 .header {
     height: 500px;
-    background-image: url(../img/header-background.png);
+    background-image: url(../assets/fonts/img/header-background.png);
     @extend %background;
 
     @include mQ(920px) {
@@ -241,10 +241,19 @@
             }
         }
 
-        span {
+        .toggle-btn {
             font-size: 38px;
             margin-left: 10px;
             display: none;
+            cursor: pointer;
+
+            .hamburger-menu {
+                display: inline-block;
+            }
+
+            .close {
+                display: none;
+            }
 
             @include mQ(580px) {
                 display: grid;
@@ -288,12 +297,26 @@
                 font-size: 12px;
             }
         }
+
+        &.open {
+            flex-direction: column;
+
+            .toggle-btn {
+                .hamburger-menu {
+                    display: none;
+                }
+
+                .close {
+                    display: inline-block;
+                }
+            }
+        }
     }
 }
 
 .choose {
     min-height: 550px;
-    background-image: url(../img/choose-background.png);
+    background-image: url(../assets/fonts/img/choose-background.png);
 
     @extend %background;
 
@@ -533,7 +556,7 @@
 
     height: 550px;
 
-    background-image: url(../img/book-background.png);
+    background-image: url(../assets/fonts/img/book-background.png);
 
     @include mQ(520px) {
         height: 450px;
@@ -627,7 +650,7 @@
 
     height: 550px;
 
-    background-image: url(../img/book2-background.png);
+    background-image: url(../assets/fonts/img/book2-background.png);
 
     @include mQ(580px) {
         height: 450px;
@@ -664,7 +687,7 @@
     @extend %background;
 
     height: 550px;
-    background-image: url(../img/feedback-background.png);
+    background-image: url(../assets/fonts/img/feedback-background.png);
 
     @include mQ(800px) {
         height: 670px;
